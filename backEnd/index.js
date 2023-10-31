@@ -39,14 +39,39 @@ app.use(express.json());
 
 
 app.get('/', async (req, res) => {
-    try {
-            let posts = await Post.find({}).sort({ 'views': -1 });
-            res.json({ posts: posts})
 
-    } catch (err) {
-        console.error(err);
-        res.status(500).send('Erro interno do servidor');
-    }
+             const data  = req.query.busca;
+
+
+             if(data){
+
+              // Post.findOneAndUpdate({ title: data },
+              //   { new: true }).then((resposta) => {     
+              //       res.json({ resposta: resposta})
+        
+                    
+        
+              //   })   
+
+            const posts = await Post.find({title: { $regex: data, $options: 'i' }}).then((resposta) => {
+              
+              res.json({ resposta: resposta, contagem: resposta.length})
+            });
+            
+
+
+             }else{
+               try {
+                       let posts = await Post.find({}).sort({ 'views': -1 });
+                       res.json({ posts: posts})
+           
+               } catch (err) {
+                   console.error(err);
+                   res.status(500).send('Erro interno do servidor');
+               }
+
+             }
+
     });
 
 
@@ -57,32 +82,22 @@ app.get('/', async (req, res) => {
 
 app.get('/:slug', (req, res) => {
     //console.send(req.params.slug);
-    Post.findOneAndUpdate({slug: req.params.slug}, { $inc: { views: 1 } },
-        { new: true }).then((resposta) => {       
+    
+
+    Post.findOneAndUpdate({ slug: req.params.slug }, { $inc: { views: 1 } },
+        { new: true }).then((resposta) => {     
             res.json({ resposta: resposta})
 
-        })   
+            
 
+        })   
+        
+      
 
       
     })
 
-     app.get('/:query', async (req, res) => {
-         try {
-           const searchTerm = req.query.busca || ''; 
-
-           const posts = await Post.find({ title: { $regex: searchTerm, $options: 'i' } });
-
-           console.log(searchTerm);
-
-           res.json({ posts: posts });
-
-         } catch (err) {
-           console.error(err);
-           res.status(500).send('Erro interno do servidor');
-         }
-       });
-
+  
 
 var usuarios = [
     {
