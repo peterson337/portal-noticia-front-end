@@ -207,11 +207,7 @@ app.post('/admin/cadastro', upload.single('file'), (req, res) => {
         slug: cadastrarNoticia.slug,
         autor: cadastrarNoticia.autor,
         views: 0,
-      }).then((documentoCriado) => {
-        console.log('Documento criado com sucesso:', documentoCriado);
-      }).catch((erro) => {
-        console.error('Erro ao criar o documento:', erro);
-      });
+      })
   
 });
 
