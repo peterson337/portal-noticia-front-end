@@ -16,7 +16,7 @@ export const Header = () => {
 
              const search = () => {
               //setSearchInput('busca=' + searchInput);
-              router.push(`Routers/[id]?busca=${searchInput}`);
+              router.push(`/Routers/busca=${searchInput}`);
               setSearchInput('');
               
              }

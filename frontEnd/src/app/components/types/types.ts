@@ -43,3 +43,16 @@ export type NoticiaPrincipalVerMais = {
 }
 
 
+export type PropsBuscaHTML = {
+    buscaArray: {
+        autor: string;
+        categoria: string;
+        conteudo: string;
+        imagem: string;
+        slug: string;
+        title: string;
+        views: number;
+        _id: string;
+    }
+}
+

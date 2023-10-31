@@ -34,7 +34,9 @@ export const OutrasNoticiasEstado = ({ OutrasNoticias } : Teste) => {
                    <b>{noticia.title}</b>
                   </h3>
 
-                  <div dangerouslySetInnerHTML={{ __html: noticia.conteudo || ''  }} /> 
+                  
+                     <div dangerouslySetInnerHTML={{ __html: (noticia.conteudo || '').substring(0, 300) + '...' }}
+                      className=' text-[#7B8591]' />  
 
 
                   <Link
