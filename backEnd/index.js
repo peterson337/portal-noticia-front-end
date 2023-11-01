@@ -5,6 +5,7 @@ const app = express();
 const fs = require('fs');
 const cors = require('cors')
 const key = require('./env.js');
+require('dotenv').config()
 
 const uploadImage = require('./uploadmage')
 
@@ -12,7 +13,7 @@ var session = require('express-session')
 
 var mongoose = require('mongoose');
 const fileUpload = require('express-fileupload');
-mongoose.connect(`${key}`,{useNewUrlParser: true, UseUnifiedTopology: true}).then(() => {
+mongoose.connect(`${process.env.KEY}`,{useNewUrlParser: true, UseUnifiedTopology: true}).then(() => {
     console.log('Connected to MongoDB');
 }).catch((err) => {
     console.log(err.message);
