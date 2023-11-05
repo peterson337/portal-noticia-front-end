@@ -6,7 +6,7 @@ import Link from 'next/link'
  export const NoticiaPrincipal = ( { noticiaPrincipal }: Props) => {
    return (
      <div>
-        {
+        {  noticiaPrincipal &&
     <section
     className=' p-4 flex justify-center items-center text-center flex-wrap'
     >

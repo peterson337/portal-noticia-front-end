@@ -10,7 +10,7 @@ export const NoticiaVerMais = () => {
 
   const fetchFunction = async () => {
     
-    const res = await fetch(`http://localhost:5000${pathname}`)
+    const res = await fetch(`https://portal-de-noticia.onrender.com${pathname}`)
     // The return value is *not* serialized
     // You can return Date, Map, Set, etc.
     

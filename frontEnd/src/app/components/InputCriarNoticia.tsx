@@ -17,19 +17,18 @@ export const InputCriarNoticia = () => {
   );
 
 
-                      const informationInput = (e: any, formDataInput: String) => {
-                       
-                          setformData({
-                            ...formData,
-                            [formDataInput]: e.target.value,
-                          });
-                        
-                      }
+                const informationInput = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, formDataInput: string) => {
+                  setformData(prevData => ({
+                    ...prevData,
+                    [formDataInput]: e.target.value,
+                  }));
+                }
+  
   
   
               const api = async () => {
   
-                 const res = await fetch('http://localhost:5000/admin/cadastro', {
+                 const res = await fetch('https://portal-de-noticia.onrender.com/admin/cadastro', {
                    method: 'POST',
                    headers: {
                     'Content-Type': 'application/json'
@@ -41,7 +40,7 @@ export const InputCriarNoticia = () => {
                   const data = await res.json();
                   
                   if (data.sucesso) {
-                    alert('Criação criada com sucesso');
+                    alert('Notícia criada com sucesso');
                     
                     setformData({
                       nameNoticia: '',
@@ -53,7 +52,7 @@ export const InputCriarNoticia = () => {
                     })
                     
                  }else{
-                  alert('Criação não foi criada');
+                  alert('A notícia não foi criada');
 
                  }
 

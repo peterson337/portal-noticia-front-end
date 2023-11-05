@@ -9,7 +9,7 @@ import { Teste, OutrasNoticiasType } from "./types/types";
     const [api, setApi] = useState([]);
 
     const fetchFunction = async () => {
-        const  res = await fetch('http://localhost:5000');
+        const  res = await fetch('https://portal-de-noticia.onrender.com');
         const data = await res.json();
         setApi(data.posts);
     }

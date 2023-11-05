@@ -6,7 +6,7 @@ import Link from 'next/link'
    return (
      <section className='md:mb-[800px]'>
       
-      <div className='bg-[#3F51B5] text-white p-5  rounded-t-xl '>
+      <div className='bg-[#3F51B5] text-white p-5  rounded-t-xl  '>
                               <h2 className='text-2xl'>
                               <b>AS MAIS LIDAS</b>
                               </h2>
@@ -21,7 +21,7 @@ import Link from 'next/link'
                 >
 
                   <div
-                className='bg-white p-4 md:w-[500px] flex flex-col flex-wrap rounded-b-xl '
+                className='bg-white p-4 md:w-[500px] flex flex-col flex-wrap  '
 
                   >
 
@@ -39,7 +39,7 @@ import Link from 'next/link'
                   </p> 
 
                 <div dangerouslySetInnerHTML={{ __html: (noticia.conteudo || '').substring(0, 100) + '...' }}
-                      className='md:w-60 w-28  ' /> 
+                      className=' md:w-52 w-28  ' /> 
 
                     <Link
                   href={`/${noticia.slug}`}

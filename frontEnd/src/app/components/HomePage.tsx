@@ -10,14 +10,14 @@ import { OutrasNoticiasEstado } from "./OutrasNoticiasEstado";
 import { MaisLidasEstado } from "./MaisLidasEstado";
 
 export const HomePage = () => {
-  const [noticiaPrincipal, setNoticiaPrincipal] = useState<noticiaPrincipalType[]>([]);
+  const [noticiaPrincipal, setNoticiaPrincipal] = useState<noticiaPrincipalType | undefined>();
   const [OutrasNoticias, setOutrasNoticias] = useState([]);
   const [ultimasLidas, setUltimasLidas] = useState([]);
   
 
 
   useEffect(() => {  
-    api.get('/').then((res : any) => {
+    api.get('https://portal-de-noticia.onrender.com/').then((res : any) => {
         setNoticiaPrincipal(res.data.posts[0]);
         setOutrasNoticias(res.data.posts);
         
@@ -34,14 +34,15 @@ export const HomePage = () => {
 
   return (
     <main>
-        <NoticiaPrincipal noticiaPrincipal={noticiaPrincipal}/>
+                  <NoticiaPrincipal noticiaPrincipal={noticiaPrincipal || {} as noticiaPrincipalType} />
 
         <span className='flex flex-col '>
 
         <h2 className='md:text-3xl text-2xl text-center bg-[#EAEAEA] pt-4 '>Últimas publicações</h2>
 
       <section
-      className=' p-4 bg-[#EAEAEA] flex justify-center items-center text-center md:flex-nowrap flex-wrap   md:flex-row'
+      className=' md:p-28  p-4 bg-[#EAEAEA] flex justify-center items-center text-center md:flex-nowrap flex-wrap 
+      md:flex-row'
       >
 
 

@@ -3,7 +3,6 @@ import React, {useState, useEffect} from 'react'
 import { usePathname } from 'next/navigation'
 import axios from 'axios';
 import "./style/busca.css" ;
-import { BuscaHtml } from "./BuscaHTML";
 import {NoticiaPrincipalVerMais  } from "./types/types";
 import Link from 'next/link'
 
@@ -26,7 +25,7 @@ export const Busca = () => {
             // const data = await res.json();
             // console.log(data);
 
-            axios.get(`http://localhost:5000?busca=${searchInit}`).then((response : any) => {
+            axios.get(`https://portal-de-noticia.onrender.com?busca=${searchInit}`).then((response : any) => {
               setBuscaArray(response.data.resposta)
               setContagem(response.data.contagem);
             })

@@ -1,7 +1,6 @@
 'use client'
 import React, {useState, useEffect, useRef} from 'react'
 import { useRouter} from 'next/navigation'
-import {ModalDeletarNoticia} from "./ModalDeletarNoticia";
 import {InputCriarNoticia} from "./InputCriarNoticia";
 import "../style.css" ;
 import { NoticiaPrincipalVerMais} from "./types/types";
@@ -19,12 +18,12 @@ export const CriarNoticia = () => {
 
   const excluirTarefas = async (id: string) => {
     setIdNumber(id);
-  const res =  axios.delete(`http://localhost:5000/deletar/${id}`);
+  const res =  axios.delete(`https://portal-de-noticia.onrender.com/deletar/${id}`);
 
   const data = (await res).data.erro;
 
   if (data != null) {
-    alert('Tarefa excluida com sucesso');
+    alert('Notícia excluida com sucesso');
   }
 
 
@@ -35,7 +34,7 @@ export const CriarNoticia = () => {
         useEffect(() => {
 
             const Api = async () => {
-                const res = await fetch(`http://localhost:5000/admin/criarNoticia`, {
+                const res = await fetch(`https://portal-de-noticia.onrender.com/admin/criarNoticia`, {
                     method: 'GET',
                 })
   
@@ -81,6 +80,7 @@ export const CriarNoticia = () => {
       >
       <InputCriarNoticia></InputCriarNoticia>
 
+        
       <button
       className='bg-sky-500 hover:bg-sky-700 text-white font-bold p-3 rounded-lg'
       onClick={() => setIsOpenModalDeletarNoticia(true)}

@@ -6,7 +6,7 @@ export type noticiaPrincipalType = {
     slug: string;
     title: string;
     views: number;
-    id: string;
+    _id: string;
 }
 
 

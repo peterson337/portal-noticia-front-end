@@ -23,24 +23,33 @@ export const Header = () => {
 
   return (
     <header  
-    className='bg-[#0AACDC] text-white p-4 flex justify-between items-center text-center'
+    className='bg-[#0AACDC] text-white p-4 flex justify-between items-center '
     >
+
+      <div className='flex flex-col md:flex-row gap-2 md:gap-7'>
       <button
       onClick={() => teste()}
       >
-        <h1
-        >
+     
+        <span className=' md:text-2xl text-[20px]'>
 
-        Nerd news
-        </h1>
+        Nerd 
+
+        <b>
+        news
+        </b>
+        </span>
           </button>
-
 
           <Link
           href='/LoginNoticia'
+          className=' md:text-2xl text-[20px]'
           > Criar notícia
           </Link>
           
+
+      </div>
+      
 
         <input type="text"
          name=""
