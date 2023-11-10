@@ -21,26 +21,25 @@ import Link from 'next/link'
                 >
 
                   <div
-                className='bg-white p-4 md:w-[500px] flex flex-col flex-wrap  '
+                className='bg-white p-4 md:w-[500px] w-80 flex flex-col flex-wrap  '
 
                   >
 
-                  <span className='flex flex-row gap-5 md:gap-9'>
+                  <span className='flex flex-col md:flex-row gap-5 md:gap-9 justify-center items-center md:justify-start md:items-start '>
 
                   <img src={noticia.imagem} alt={noticia.title}
-                  className='md:w-[50%] w-28 rounded-xl h-28 h-40'
-                   />
+                  className='md:w-[50%] w-52 rounded-xl h-28 h-40'
+                  />
 
                     <div 
-                    className='flex flex-col gap-2 justify-start items-start'
+                    className='flex flex-col gap-2 justify-center items-center md:justify-start md:items-start'
                     >
                   <p className='text-[#33439B] tracking-[3.2px] ml-4'>
                   {noticia.categoria}
                   </p> 
 
                 <div dangerouslySetInnerHTML={{ __html: (noticia.conteudo || '').substring(0, 100) + '...' }}
-                      className=' md:w-52 w-28  ' /> 
-
+                      className=' md:w-52 w-72  ' /> 
                     <Link
                   href={`/${noticia.slug}`}
                     className=' text-[#0AACDC] font-bold hover:text-red-500 hover:underline ml-5'
@@ -70,4 +69,5 @@ import Link from 'next/link'
      </section>
    )
  }
+ 
  
