@@ -19,27 +19,13 @@ import { Teste, OutrasNoticiasType } from "./types/types";
     }, [])
 
 
-   return (
-     <section>
-         <div
-         className=' md:mt-10 m-4'
-         >
-
-<div className='bg-[#3F51B5] text-white p-5  rounded-t-xl text-center '>
-                              <h2 className='text-2xl'>
-                              <b>AS MAIS LIDAS</b>
-                              </h2>
-
-                            </div>
-      {
-            api.map((noticia : OutrasNoticiasType) => {
-              return(
+  return(
 
                 <section key={noticia.slug}
                 >
 
                   <div
-                className='bg-white p-4 md:w-[500px] flex flex-col flex-wrap '
+                className='= p-4 md:w-[509px] flex flex-col flex-wrap  '
 
                   >
 
@@ -52,12 +38,12 @@ import { Teste, OutrasNoticiasType } from "./types/types";
                     <div 
                     className='flex flex-col gap-2 justify-start items-start'
                     >
-                  <p className='text-[#33439B] tracking-[3.2px] ml-4'>
+                  <p className='text-[#33439B] tracking-[3.2px] ml-4 '>
                   {noticia.categoria}
                   </p> 
 
                 <div dangerouslySetInnerHTML={{ __html: (noticia.conteudo || '').substring(0, 100) + '...' }}
-                      className='md:w-60 w-28  ' /> 
+                      className='md:w-52 w-28   ' /> 
 
                     <Link
                   href={`/${noticia.slug}`}
