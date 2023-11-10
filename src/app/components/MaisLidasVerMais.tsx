@@ -39,7 +39,7 @@ import { Teste, OutrasNoticiasType } from "./types/types";
                 >
 
                   <div
-                className='= p-4 md:w-[509px] flex flex-col flex-wrap  '
+                className='bg-white p-4 md:w-[509px] flex flex-col flex-wrap  '
 
                   >
 
