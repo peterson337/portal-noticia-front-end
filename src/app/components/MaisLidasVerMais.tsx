@@ -19,7 +19,21 @@ import { Teste, OutrasNoticiasType } from "./types/types";
     }, [])
 
 
-  return(
+   return (
+     <section>
+         <div
+         className=' md:mt-10 m-4'
+         >
+
+<div className='bg-[#3F51B5] text-white p-5  rounded-t-xl text-center '>
+                              <h2 className='text-2xl'>
+                              <b>AS MAIS LIDAS</b>
+                              </h2>
+
+                            </div>
+      {
+            api.map((noticia : OutrasNoticiasType) => {
+              return(
 
                 <section key={noticia.slug}
                 >
